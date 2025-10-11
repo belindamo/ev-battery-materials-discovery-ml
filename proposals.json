@@ -11,5 +11,103 @@
     "risks": "What are the main risks?",
     "implications": "What are the implications if successful?",
     "_isExample": true
+  },
+  {
+    "id": "ev-battery-ml-discovery",
+    "title": "ML-Driven Discovery of EV Battery Materials",
+    "abstract": "Machine learning models can effectively predict key electrochemical properties (voltage, capacity, cycle stability) of novel cathode and anode materials by learning from existing battery materials databases, enabling accelerated discovery of high-performance EV battery compositions. This research proposes a hybrid approach combining semantic embedding-based retrieval with physics-informed ML models to discover novel battery materials that outperform current standards while considering practical constraints like cost and availability.",
+    "hypothesis": "Primary: Machine learning models can effectively predict key electrochemical properties of novel battery materials from existing databases. Secondary: Combining semantic embedding approaches with physics-informed constraints will outperform purely data-driven methods for battery material property prediction.",
+    "relatedWork": "Current battery material discovery relies on time-consuming trial-and-error experimentation and first-principles computational methods. Recent materials informatics advances show ML can accelerate screening, predict properties without expensive DFT calculations, and guide synthesis. Gap: Most approaches focus on single-property prediction or lack integration with real-world constraints (cost, availability, toxicity).",
+    "implementationPlan": "Three-phase approach: (1) Semantic Embedding-Based Discovery: Curate dataset from Materials Project and literature, generate embeddings using sentence-transformers, build FAISS index, implement LLM-based composition generation. (2) Structure-Property Prediction: Extract structural descriptors using pymatgen/matminer, train XGBoost models with nested cross-validation, perform feature importance analysis. (3) Hybrid Pipeline: Integrate both approaches with physics constraints, multi-objective optimization, deploy via Streamlit interface.",
+    "evaluationPlan": "Success metrics include: MAE < 0.2V for voltage prediction, MAE < 20 mAh/g for capacity prediction, Precision@10 > 0.7 for novel recommendations, R² > 0.85 for voltage and > 0.80 for capacity in structure-property models, overall system accuracy improvement, user satisfaction scores from materials scientist evaluations, novel material discovery rate validated via literature search, pipeline inference time < 1 second per query.",
+    "successCriteria": "Phase 1 (Months 1-3): Curated dataset >10K materials, baseline models, initial validation. Phase 2 (Months 4-6): Optimized hybrid pipeline, Streamlit deployment, expert evaluation results. Phase 3 (Months 7-9): Novel material candidates with predicted properties, open-source toolkit, research paper draft and potential patent applications. Realistic outcome: Develop screening tool reducing experimental validation by 70%, identify 20-30 promising candidates, create open-source toolkit.",
+    "risks": "Data Quality: Limited/biased training data (mitigate with cross-validation across databases, uncertainty quantification). Model Generalization: Poor performance on novel classes (domain adaptation, physics constraints). Experimental Validation: Predicted materials may not be synthesizable (synthesis feasibility scores, experimental collaboration). Computational Resources: Large-scale training requirements (pre-trained embeddings, optimized architectures, cloud computing).",
+    "implications": "Scientific: Advance materials informatics for energy storage, demonstrate hybrid ML effectiveness, provide benchmark protocols. Practical: Accelerate EV battery development, reduce R&D costs, enable unconventional material exploration. Broader: Template for ML materials discovery, contribute to sustainable energy transition, open science tools for global community.",
+    "experiments": [
+      {
+        "id": "semantic-embedding-discovery",
+        "title": "Semantic Embedding-Based Material Discovery",
+        "objective": "Develop retrieval-augmented system for battery material property prediction using semantic embeddings",
+        "variables": {
+          "independent": ["Material composition", "Crystal structure", "Synthesis conditions"],
+          "dependent": ["Voltage", "Specific capacity", "Cycle life", "Cost metrics"],
+          "controls": ["Temperature", "Electrolyte type", "Testing protocols"]
+        },
+        "method": [
+          "Curate dataset from Materials Project, Battery Materials Database, and literature",
+          "Generate embeddings using sentence-transformers on material descriptions and properties",
+          "Build FAISS index for similarity search",
+          "Implement LLM-based composition generation with retrieved context",
+          "Validate predictions against Materials Project Battery Explorer"
+        ],
+        "metrics": {
+          "voltage_mae_threshold": 0.2,
+          "capacity_mae_threshold": 20,
+          "precision_at_10_threshold": 0.7,
+          "cost_performance_improvement": "Pareto frontier advancement"
+        }
+      },
+      {
+        "id": "structure-property-prediction",
+        "title": "Structure-Property Prediction Model",
+        "objective": "Train XGBoost model to predict battery material properties from structural descriptors",
+        "variables": {
+          "features": ["Atomic properties", "Crystal structure descriptors", "Electronic features"],
+          "targets": ["Theoretical voltage", "Gravimetric capacity", "Volumetric capacity", "Cycle stability"],
+          "controls": ["Feature normalization", "Cross-validation strategy", "Hyperparameter tuning"]
+        },
+        "method": [
+          "Extract structural descriptors using pymatgen and matminer",
+          "Feature engineering: atomic descriptors, crystal structure features, electronic properties",
+          "Train XGBoost models with nested cross-validation",
+          "Feature importance analysis and model interpretation",
+          "Benchmark against baseline models (linear regression, random forest)"
+        ],
+        "metrics": {
+          "voltage_r2_threshold": 0.85,
+          "capacity_r2_threshold": 0.80,
+          "feature_importance_analysis": true,
+          "generalization_test": "Unseen material classes"
+        }
+      },
+      {
+        "id": "hybrid-retrieval-prediction",
+        "title": "Hybrid Retrieval-Prediction Pipeline",
+        "objective": "Combine semantic search with physics-informed ML for comprehensive material discovery",
+        "variables": {
+          "pipeline_components": ["Embedding model", "Similarity threshold", "Prediction model weights"],
+          "integration_strategies": ["Early fusion", "Late fusion", "Ensemble methods"],
+          "validation_datasets": ["Hold-out test sets", "Expert-curated materials"]
+        },
+        "method": [
+          "Integrate experiments 1 & 2 into unified pipeline",
+          "Implement physics constraints (charge neutrality, stability criteria)",
+          "Multi-objective optimization for performance-cost trade-offs",
+          "Deploy via Streamlit interface for interactive exploration",
+          "Expert evaluation with materials scientists"
+        ],
+        "metrics": {
+          "system_accuracy_improvement": "Over individual methods",
+          "user_satisfaction_scores": "Materials scientist evaluations",
+          "novel_discovery_rate": "Literature validation",
+          "inference_time_threshold": 1.0
+        }
+      }
+    ],
+    "datasets": [
+      "Materials Project Database",
+      "Battery Materials Database (materialsforbatteries.org)",
+      "ChemDataExtractor2 corpus",
+      "Literature-curated battery performance data"
+    ],
+    "tools": [
+      "sentence-transformers",
+      "FAISS",
+      "llama-cpp-python",
+      "XGBoost",
+      "pymatgen",
+      "matminer",
+      "Streamlit"
+    ]
   }
 ]
