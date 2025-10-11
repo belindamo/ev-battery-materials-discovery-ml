@@ -1,11 +1,99 @@
 [
   {
-    "id": "1",
-    "hypothesis": "Machine learning models trained on existing battery materials data can accurately predict electrochemical properties of novel cathode and anode materials, leading to the discovery of high-performance battery materials that exceed current commercial standards."
+    "id": "H1-ml-prediction",
+    "category": "primary",
+    "title": "ML-Driven Materials Prediction",
+    "hypothesis": "Machine learning models trained on comprehensive battery materials datasets can predict electrochemical properties (voltage, capacity, cycle stability) of novel cathode and anode materials with sufficient accuracy to guide experimental validation and accelerate materials discovery.",
+    "null_hypothesis": "ML predictions show no significant correlation with experimental electrochemical properties (r² < 0.3)",
+    "alternative_hypothesis": "ML predictions achieve meaningful accuracy (r² > 0.7) for at least two key properties",
+    "assumptions": [
+      "Structure-property relationships in battery materials follow learnable patterns",
+      "Existing datasets contain sufficient signal to generalize to novel materials",
+      "ML models can capture complex interactions between crystal structure, composition, and electrochemical performance",
+      "Computational predictions can meaningfully reduce experimental search space"
+    ],
+    "falsifiability_conditions": [
+      "Predicted materials consistently fail experimental validation",
+      "Model performance degrades severely on out-of-distribution materials",
+      "Computational cost exceeds traditional screening methods"
+    ],
+    "success_metrics": {
+      "voltage_prediction_r2": "> 0.7",
+      "capacity_prediction_r2": "> 0.6",
+      "cycle_stability_prediction_r2": "> 0.5"
+    }
   },
   {
-    "id": "example-1",
-    "hypothesis": "This is an example hypothesis that demonstrates the expected format.",
-    "_isExample": true
+    "id": "H2-multimodal-integration", 
+    "category": "secondary",
+    "title": "Multi-Modal Data Integration",
+    "hypothesis": "Integrating heterogeneous data sources (crystal structures, literature text, synthesis conditions) through multi-modal embeddings will significantly improve prediction accuracy compared to single-modality approaches.",
+    "null_hypothesis": "Multi-modal models perform no better than best single-modal baseline",
+    "alternative_hypothesis": "Multi-modal approach achieves >20% improvement in prediction accuracy",
+    "assumptions": [
+      "Different data modalities capture complementary aspects of materials properties",
+      "Text-based knowledge from scientific literature contains predictive signal",
+      "Synthesis conditions significantly influence electrochemical performance",
+      "Embedding spaces can meaningfully align different data types"
+    ],
+    "falsifiability_conditions": [
+      "Alignment between modalities fails to improve predictions",
+      "Computational overhead outweighs accuracy gains",
+      "Single modalities contain redundant information"
+    ],
+    "success_metrics": {
+      "improvement_over_baseline": "> 20%",
+      "modality_contribution_analysis": "required"
+    }
+  },
+  {
+    "id": "H3-similarity-discovery",
+    "category": "tertiary", 
+    "title": "Similarity-Based Discovery",
+    "hypothesis": "Materials with similar embeddings in learned representation space will exhibit similar electrochemical properties, enabling similarity-based search for high-performance materials analogous to existing promising candidates.",
+    "null_hypothesis": "Embedding similarity shows no correlation with property similarity",
+    "alternative_hypothesis": "Materials within small embedding distances show correlated properties (r > 0.6)",
+    "assumptions": [
+      "Learned embeddings capture meaningful chemical similarities",
+      "Similar materials in embedding space have similar properties", 
+      "Local neighborhoods in embedding space contain materials with gradual property changes",
+      "Similarity search can identify non-obvious materials relationships"
+    ],
+    "falsifiability_conditions": [
+      "Embedding space exhibits no meaningful clustering by properties",
+      "Similarity search performs worse than random selection",
+      "Property landscapes are too discontinuous for similarity-based approaches"
+    ],
+    "success_metrics": {
+      "embedding_property_correlation": "> 0.6",
+      "novel_materials_discovered": ">= 5",
+      "experimental_screening_reduction": ">= 50%"
+    }
+  },
+  {
+    "id": "risk-assessment",
+    "category": "meta",
+    "title": "Risk Assessment Framework",
+    "hypothesis": "The primary risks to this research program are data quality, model generalization, and experimental validation gaps, which can be systematically de-risked through early testing and validation strategies.",
+    "risk_dimensions": [
+      {
+        "risk": "Data Quality Risk",
+        "description": "Inconsistent or biased training data could compromise model generalization",
+        "de_risking_strategy": "Implement rigorous data validation and cross-dataset verification",
+        "early_test": "Compare model predictions on well-characterized benchmark materials"
+      },
+      {
+        "risk": "Generalization Risk", 
+        "description": "Models may overfit to existing materials families and fail on novel chemistries",
+        "de_risking_strategy": "Design train/test splits that challenge generalization across chemical families",
+        "early_test": "Evaluate on materials from different crystal systems than training data"
+      },
+      {
+        "risk": "Experimental Validation Gap",
+        "description": "Computational predictions may not translate to real-world performance", 
+        "de_risking_strategy": "Collaborate with experimental groups for validation studies",
+        "early_test": "Validate predictions on small set of synthesizable materials"
+      }
+    ]
   }
 ]
