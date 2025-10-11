@@ -1,0 +1,11 @@
+material_id,formula,voltage,capacity,stability,structure_type,composition,description,material_type
+LiCoO2_001,LiCoO2,3.7,140.0,-2.1,layered_oxide,Li1Co1O2,Lithium cobalt oxide cathode material with high energy density,cathode
+LiFePO4_001,LiFePO4,3.4,170.0,-3.2,olivine,Li1Fe1P1O4,Lithium iron phosphate cathode with excellent safety profile,cathode
+LiMn2O4_001,LiMn2O4,4.0,120.0,-1.8,spinel,Li1Mn2O4,Spinel lithium manganese oxide cathode material,cathode
+Si_anode_001,Si,0.4,4200.0,-0.1,crystalline,Si1,Silicon anode material with ultra-high capacity,anode
+LiTi5O12_001,LiTi5O12,1.55,175.0,-2.9,spinel,Li1Ti5O12,Lithium titanate anode with excellent cycle stability,anode
+NMC811_001,LiNi0.8Mn0.1Co0.1O2,3.8,200.0,-2.5,layered_oxide,Li1Ni0.8Mn0.1Co0.1O2,High-nickel NMC cathode material with high energy density,cathode
+LiNiO2_001,LiNiO2,3.8,180.0,-2.3,layered_oxide,Li1Ni1O2,Lithium nickel oxide cathode material,cathode
+Graphite_001,C,0.2,372.0,-0.05,layered,C1,Graphite anode standard material,anode
+LiMnPO4_001,LiMnPO4,4.1,171.0,-2.8,olivine,Li1Mn1P1O4,Lithium manganese phosphate cathode,cathode
+NMC532_001,LiNi0.5Mn0.3Co0.2O2,3.6,160.0,-2.4,layered_oxide,Li1Ni0.5Mn0.3Co0.2O2,Balanced NMC cathode material,cathode

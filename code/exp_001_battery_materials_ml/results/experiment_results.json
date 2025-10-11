@@ -1,0 +1,113 @@
+{
+  "experiment_info": {
+    "start_time": "2025-10-11T15:14:23.940297",
+    "hypothesis": "ML models can predict battery material properties effectively",
+    "approaches": [
+      "XGBoost regression",
+      "Random Forest",
+      "Feature engineering"
+    ],
+    "end_time": "2025-10-11T15:14:24.070760"
+  },
+  "data_collection": {
+    "total_materials": 10,
+    "data_sources": [
+      "synthetic_dataset"
+    ],
+    "cathode_materials": 7,
+    "anode_materials": 3,
+    "properties": [
+      "voltage",
+      "capacity",
+      "stability",
+      "structure_type"
+    ]
+  },
+  "model_performance": {
+    "xgb_voltage_mse": 0.11735910177230835,
+    "xgb_voltage_mae": 0.30005916953086853,
+    "xgb_voltage_r2": -0.4273412227630615,
+    "xgb_capacity_mse": 1377.9736328125,
+    "xgb_capacity_mae": 35.73115158081055,
+    "xgb_capacity_r2": -6.119266510009766,
+    "rf_voltage_mse": 0.10923441666666539,
+    "rf_voltage_r2": -0.3285266891891747
+  },
+  "predictions": {
+    "similarity_search": {
+      "query": {
+        "formula": "LiNiO2",
+        "structure_type": "layered_oxide",
+        "material_type": "cathode",
+        "stability": -2.0
+      },
+      "results": [
+        {
+          "material_id": "LiNiO2_001",
+          "formula": "LiNiO2",
+          "similarity_score": 0.9991138869438436,
+          "voltage": 3.8,
+          "capacity": 180.0,
+          "structure_type": "layered_oxide",
+          "material_type": "cathode"
+        },
+        {
+          "material_id": "LiCoO2_001",
+          "formula": "LiCoO2",
+          "similarity_score": 0.967186504997736,
+          "voltage": 3.7,
+          "capacity": 140.0,
+          "structure_type": "layered_oxide",
+          "material_type": "cathode"
+        },
+        {
+          "material_id": "LiMn2O4_001",
+          "formula": "LiMn2O4",
+          "similarity_score": 0.9575913178780766,
+          "voltage": 4.0,
+          "capacity": 120.0,
+          "structure_type": "spinel",
+          "material_type": "cathode"
+        }
+      ]
+    }
+  },
+  "novel_materials": [
+    {
+      "proposed_formula": "LiNi0.6Mn0.2Co0.2O2",
+      "predicted_voltage": 3.5998222827911377,
+      "predicted_capacity": 160.5419158935547,
+      "confidence": 0.8671453424612964,
+      "reasoning": "Balanced NMC composition optimizing capacity and stability",
+      "material_type": "cathode",
+      "structure_type": "layered_oxide"
+    },
+    {
+      "proposed_formula": "LiFe0.8Mn0.2PO4",
+      "predicted_voltage": 3.8465328216552734,
+      "predicted_capacity": 140.0452423095703,
+      "confidence": 0.7020911015227694,
+      "reasoning": "Iron-manganese phosphate solid solution for improved performance",
+      "material_type": "cathode",
+      "structure_type": "olivine"
+    },
+    {
+      "proposed_formula": "LiSi0.3C0.7",
+      "predicted_voltage": 1.6318268775939941,
+      "predicted_capacity": 4179.65576171875,
+      "confidence": 0.6867546528826894,
+      "reasoning": "Silicon-carbon composite anode for high capacity with stability",
+      "material_type": "anode",
+      "structure_type": "crystalline"
+    },
+    {
+      "proposed_formula": "LiNi0.9Mn0.05Co0.05O2",
+      "predicted_voltage": 3.5998222827911377,
+      "predicted_capacity": 157.57679748535156,
+      "confidence": 0.9381112152632738,
+      "reasoning": "Ultra-high nickel NMC for maximum energy density",
+      "material_type": "cathode",
+      "structure_type": "layered_oxide"
+    }
+  ]
+}
