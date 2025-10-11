@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1",
+    "hypothesis": "Machine learning models trained on existing battery materials data can accurately predict electrochemical properties of novel cathode and anode materials, leading to the discovery of high-performance battery materials that exceed current commercial standards."
+  },
+  {
+    "id": "example-1",
+    "hypothesis": "This is an example hypothesis that demonstrates the expected format.",
+    "_isExample": true
+  }
+]
