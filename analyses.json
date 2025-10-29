@@ -12,26 +12,5 @@
     "limitations": "Limitations of the analysis",
     "nextSteps": "Suggested next steps",
     "_isExample": true
-  },
-  {
-    "id": "statistical-framework-2025",
-    "title": "Statistical Analysis Framework for EV Battery Materials Discovery",
-    "experimentIds": [],
-    "summary": "Comprehensive statistical analysis framework established for rigorous evaluation of battery materials discovery experiments. Framework includes data quality assessment, inferential statistics, comparative analysis, and predictive modeling validation protocols.",
-    "methods": "Multi-tier statistical approach: (1) Data quality assessment with completeness checks and outlier detection using robust methods, (2) Descriptive statistics with distribution analysis and correlation matrices, (3) Inferential statistics including t-tests, ANOVA, and effect size calculations, (4) Comparative analysis of material properties and performance metrics, (5) Predictive modeling validation with cross-validation and residual analysis.",
-    "findings": "Framework establishes rigorous methodology for analyzing experimental results with appropriate statistical tests, significance thresholds (α = 0.05 for primary, α = 0.01 for secondary hypotheses), and effect size interpretations. Visualization standards defined for distribution plots, relationship analysis, and performance comparisons.",
-    "implications": "This framework ensures reproducible, statistically sound analysis of battery materials experiments. Enables robust comparison of cathode/anode materials, validation of ML predictions, and assessment of practical vs statistical significance. Critical for generating reliable conclusions in materials discovery research.",
-    "limitations": "Framework developed before experimental data collection. Actual implementation may require adjustments based on specific data characteristics, sample sizes, and experimental design constraints. Some statistical assumptions may not hold for all material property distributions.",
-    "nextSteps": "1. Execute planned experiments to generate data, 2. Implement framework with real experimental results, 3. Validate statistical assumptions with actual data distributions, 4. Generate comprehensive analysis reports, 5. Refine methodology based on initial findings.",
-    "statisticalTests": {
-      "primary": ["Independent t-test", "One-way ANOVA", "Pearson correlation"],
-      "secondary": ["Mann-Whitney U", "Kruskal-Wallis", "Spearman correlation"],
-      "categorical": ["Chi-square test", "Fisher's exact test"]
-    },
-    "qualityAssurance": {
-      "validation": ["Independent replication", "Sensitivity analysis", "Cross-validation"],
-      "documentation": ["Methodology descriptions", "Parameter specifications", "Assumption checking"]
-    },
-    "timestamp": "2025-10-11T15:04:00Z"
   }
 ]
